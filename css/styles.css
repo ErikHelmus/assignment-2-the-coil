@@ -1,0 +1,150 @@
+/* Variables */
+:root {
+    --dark-color:rgb(35, 31, 32);
+    --light-color: rgb(221, 219, 214);
+}
+/* Global */
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-color);
+}
+h1 {
+    font-family: "tt-ricks", serif;
+    font-weight: 400;
+    font-size: 4.5rem;
+    display: flex;
+    justify-content: center;
+    margin: .5rem;
+}
+h2,h3,p,li {
+    font-family: "miller-text", serif;
+}
+/* Heading */
+header {
+    background-color: var(--light-color);
+}
+#menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+#menu a {
+    text-decoration: none;
+    color: var(--dark-color);
+    margin: 1rem 1rem;
+}
+#menu-toggle {
+    display: none;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    border: none;
+}
+#menu.active {
+    display: flex;
+}
+/* Hero Section */
+.hero {
+    min-height: 35rem;
+    background-image: url(../images/hero.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hero h2, .about h2, .contact h1, .contact p {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    padding: 1.25rem;
+    font-size: 1.5rem;
+}
+/* Gallery*/
+.gallery-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.gallery-images img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+    border: 0;
+}
+/* About and Artist */
+.about, .artists {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    padding: 4rem;
+    max-width: 80%;
+}
+.artists h2 {
+    padding-left: 2rem;
+}
+/* Parlour and Footer */
+.parlours, footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+.parlours p{
+    max-width: 50%;
+}
+footer {
+    padding-top: 1rem;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}
+/* Contact */
+.contact {
+    min-height: 40rem;
+    background-image: url(../images/mockup.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/*media query for tablets */
+@media screen and (max-width: 48em) {
+    #menu-toggle {
+        display: block;
+    }
+    #menu {
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        background-color: var(--light-color);
+        border: .09rem solid;
+        border-color: var(--dark-color) ;
+        padding: 0.625rem;
+    }
+    .gallery-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .artists, .about {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 3rem;
+        max-width: 90%;
+    }
+}
+/*media query for mobile */
+@media screen and (max-width: 30em) {
+    .hero h2, .contact p{
+        max-width: 80%;
+        padding: .75rem;
+    }
+    .gallery-images {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        .parlours p {
+            min-width: 90%;
+        }
+}
